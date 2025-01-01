@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/favicon.png" type="image/x-icon">
+    <title>Mansour-Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .typing-container {
+        font-family: 'Courier New', monospace;
+        font-size: 24px;
+        color: #333;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 2px solid black;
+        display: inline-block;
+        animation: blink-caret 0.7s step-end infinite;
+        }
+
+        #typing-text {
+            height: 40px;
+        }
+
+        @keyframes blink-caret {
+        from, to {
+            border-color: transparent;
+        }
+        50% {
+            border-color: black;
+        }
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header>
+        <nav class="fixed top-0 z-50 w-full px-4 py-4 flex justify-between items-center bg-white">
+            <a class="text-3xl font-bold leading-none" href="#">
+                <img class="w-16" src="./img/logo.png" alt="">
+            </a>
+            <div class="lg:hidden">
+                <button class="navbar-burger flex items-center text-blue-600 p-3">
+                    <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Mobile menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
+                <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#home">Home</a></li>
+                <li class="text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                    </svg>
+                </li>
+                <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#about">About Me</a></li>
+                <li class="text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                    </svg>
+                </li>
+                <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#achievements">Achievements</a></li>
+                <li class="text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                    </svg>
+                </li>
+                <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#contact">My Contacts</a></li>
+                <li>
+                    <a href="https://kcode2025.github.io/sucess-history" class="bg-sky-900 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-100 hover:text-sky-900" target="_blank">Success Story</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="navbar-menu fixed top-0 z-50 w-full hidden">
+            <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+            <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+                <div class="flex items-center mb-8">
+                    <a class="mr-auto text-3xl font-bold leading-none" href="#">
+                        <img class="w-16" src="./img/logo.png" alt="">
+                    </a>
+                    <button class="navbar-close">
+                        <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div>
+                    <ul>
+                        <li class="mb-1">
+                            <a class="navbar-itemMenu block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#home">Home</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="navbar-itemMenu block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#about">About Me</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="navbar-itemMenu block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#achievements">Achievements</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="navbar-itemMenu block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#contact">My Contacts</a>
+                        </li>
+                        <li>
+                            <div class="border-t-2">
+                                <a class="navbar-itemMenu block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="https://kcode2025.github.io/sucess-history" target="_blank">Success Story</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-auto">
+
+                    <a href="https://kcode2025.github.io/sucess-history" target="_blank">
+                        <p class="my-4 text-xs text-center text-gray-400">
+                            Powered by Success Story
+                        </p>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+ 
+
+    <!-- Hero Section -->
+    <section id="home" class="flex flex-col-reverse lg:flex-row lg:justify-around justify-between bg-green-600 text-white text-center pt-20 lg:pb-0 pb-5 px-2 fade-in">
+        <div class="self-center lg:w-2/4">
+            <h2 id="typing-text" class="text-3xl lg:text-4xl font-bold mb-4"></h2>
+            <p class="text-xl mb-8 p-1">Sheikh Mansour bin Zayed bin Sultan bin Zayed bin Khalifa Al Nahyan is a Sheikh and politician from the United Arab Emirates and a member of the Abu Dhabi royal family. He is the half-brother of the current President of the UAE and Emir of Abu Dhabi, Mohamed bin Zayed Al Nahyan.</p>
+            <a href="#contact" class="bg-white text-red-400 font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-red-400 hover:text-white">My Contacts</a>
+        </div>
+        <div class="flex justify-center lg:justify-end">
+            <img class="lg:w-full" src="./img/Mansour.png">
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="about" class="py-16 bg-gray-100 fade-in">
+        <div class="container mx-auto text-center px-2">
+            <h3 class="text-3xl font-bold mb-6">About me</h3>
+            <p class="text-lg max-w-3xl mx-auto text-justify">Sheikh Mansour bin Zayed Al Nahyan, born on November 20, 1970, is an influential member of the Abu Dhabi royal family and a prominent figure in the United Arab Emirates. He is the son of the late Sheikh Zayed bin Sultan Al Nahyan, the founding father of the UAE, and the half-brother of the current president, Sheikh Mohammed bin Zayed Al Nahyan. Sheikh Mansour holds strategic positions in the government, serving as Deputy Prime Minister and Minister of the Presidential Court, where he plays a crucial role in policy formulation and the nation's development.</p>
+            <p class="text-lg max-w-3xl mx-auto text-justify">His influence extends beyond politics, with direct involvement in various economic, financial, and technological initiatives. He is the chairman of the Ministerial Council for Development and the Mubadala Investment Fund, one of the largest sovereign wealth funds in the world. His visionary leadership is also evident in renewable energy projects, infrastructure, and education, all of which have significantly contributed to the sustainable growth of the UAE.</p>
+            <p class="text-lg max-w-3xl mx-auto text-justify">Sheikh Mansour is also widely recognized for his passion for sports. He is the owner of Manchester City Football Club, which, under his leadership, has become one of the most successful football teams in the world. Additionally, he is an investor in various sports clubs and global events, fostering cultural integration and sports excellence. Sheikh Mansour is an example of visionary leadership, blending tradition and innovation to shape the future of his nation and inspire the world.</p>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="achievements" class="py-16 bg-white fade-in">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-6">Achievements</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl">
+                    <h4 class="text-xl font-bold mb-4">Deputy Prime Minister</h4>
+                    <p>Sheikh Mansour bin Zayed Al Nahyan is the Deputy Prime Minister of the United Arab Emirates. Additionally, he holds the position of Minister of the Presidential Court.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl">
+                    <h4 class="text-xl font-bold mb-4">City Football Group Owner</h4>
+                    <p>City Football Group is a company established with the goal of creating, overseeing, and managing a network of clubs and various areas within football. It operates under the supervision of Manchester City and is headquartered at Abu Dhabi United Group.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Contato -->
+    <section id="contact" class="py-16 bg-green-600 text-white text-center fade-in">
+        <div class="container mx-auto px-2">
+            <h3 class="text-3xl font-bold mb-6">My contacts</h3>
+            <p class="mb-8">Main social media platforms of one of the most inspiring and successful men in the world.</p>
+            <form class="max-w-lg mx-auto">
+                <div class="flex flex-col justify-center lg:flex-row mb-4 gap-8">
+                    <a href="https://www.cityfootballgroup.com/" target="_blank">
+                        <div class="flex gap-1 items-center">
+                            <img class="h-8 w-8 text-red-500" src="./img//internet.png" alt="internet">
+                            <p class="text-1xl">www.cityfootballgroup.com/</p>
+                        </div>
+                    </a>
+                    <a href="https://x.com/HHmansour" target="_blank">
+                        <div class="flex gap-1 items-center">
+                            <svg class="h-8 w-8 text-zinc-800"  width="30" height="30" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>
+                            <p class="text-1xl">منصور بن زايد</p>
+                        </div>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <a class="cursor-pointer" href="https://kcode2025.github.io/sucess-history" target="_blank"><p class="underline">Powered by Success Story</p></a>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        // Burger menus
+        document.addEventListener('DOMContentLoaded', function() {
+            // open
+            const burger = document.querySelectorAll('.navbar-burger');
+            const menu = document.querySelectorAll('.navbar-menu');
+        
+            if (burger.length && menu.length) {
+                for (var i = 0; i < burger.length; i++) {
+                    burger[i].addEventListener('click', function() {
+                        for (var j = 0; j < menu.length; j++) {
+                            menu[j].classList.toggle('hidden');
+                        }
+                    });
+                }
+            }
+        
+            // close
+            const close = document.querySelectorAll('.navbar-close');
+            const backdrop = document.querySelectorAll('.navbar-backdrop');
+            const itemMenu = document.querySelectorAll('.navbar-itemMenu');
+        
+            if (close.length) {
+                for (var i = 0; i < close.length; i++) {
+                    close[i].addEventListener('click', function() {
+                        for (var j = 0; j < menu.length; j++) {
+                            menu[j].classList.toggle('hidden');
+                        }
+                    });
+                }
+            }
+        
+            if (backdrop.length) {
+                for (var i = 0; i < backdrop.length; i++) {
+                    backdrop[i].addEventListener('click', function() {
+                        for (var j = 0; j < menu.length; j++) {
+                            menu[j].classList.toggle('hidden');
+                        }
+                    });
+                }
+            }
+
+            if (itemMenu.length) {
+                for (var i = 0; i < itemMenu.length; i++) {
+                    itemMenu[i].addEventListener('click', function() {
+                        for (var j = 0; j < menu.length; j++) {
+                            menu[j].classList.toggle('hidden');
+                        }
+                    });
+                }
+            }
+        });
+
+        // animação de digitação
+
+        const texts = [
+        "Visionary Leader",
+        "Sports Enthusiast",
+        "City Football Group Owner",
+        "Innovative Investor",
+        "Philanthropist",
+        "Economic Pioneer",
+        "Influential Figure",
+        "Strategic Thinker",
+        "Cultural Advocate",
+        "Inspiring Icon"
+        ];
+
+        let currentTextIndex = 0;
+        let charIndex = 0;
+        const typingSpeed = 100; // Velocidade de digitação (ms por caractere)
+        const erasingSpeed = 50; // Velocidade de apagar
+        const delayBetweenTexts = 2000; // Tempo antes de trocar para o próximo texto
+
+        const typingElement = document.getElementById("typing-text");
+
+        function typeText() {
+        if (charIndex < texts[currentTextIndex].length) {
+            typingElement.textContent += texts[currentTextIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(typeText, typingSpeed);
+        } else {
+            setTimeout(eraseText, delayBetweenTexts);
+        }
+        }
+
+        function eraseText() {
+        if (charIndex > 0) {
+            typingElement.textContent = texts[currentTextIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(eraseText, erasingSpeed);
+        } else {
+            currentTextIndex = (currentTextIndex + 1) % texts.length;
+            setTimeout(typeText, typingSpeed);
+        }
+        }
+
+        // Começar a animação
+        document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(typeText, delayBetweenTexts);
+        });
+
+        </script>
+</body>
+</html>
